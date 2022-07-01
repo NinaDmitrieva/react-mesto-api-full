@@ -1,0 +1,17 @@
+.login__block {
+  background-color: black;
+  max-width: 430px;
+  width: 100%;
+  padding: 36px 34px 37px;
+  position: relative;
+  color: white;
+  box-sizing: border-box;
+  
+}
+
+@media screen and (max-width: 800px) {
+.login__block  {
+  padding: 0;
+  max-width: 282px;
+  }
+}

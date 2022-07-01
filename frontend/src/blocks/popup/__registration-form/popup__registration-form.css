@@ -1,0 +1,23 @@
+.popup__registration-form {
+  background: #fff;
+  width: 430px;
+  border-radius: 10px;
+  height: 330px;
+  position: relative;
+  color: #000000;
+  box-sizing: border-box;
+  padding: 36px 60px;
+  position:absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+
+ }
+
+
+@media screen and (max-width: 800px) {
+.popup__registration-form  {
+  padding: 0;
+  max-width: 282px;
+  }
+}

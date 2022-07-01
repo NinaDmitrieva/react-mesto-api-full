@@ -1,0 +1,5 @@
+.element__foto {
+width: 282px;
+min-height: 282px;
+object-fit: cover;
+}

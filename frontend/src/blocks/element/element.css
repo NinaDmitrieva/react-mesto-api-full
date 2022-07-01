@@ -1,0 +1,14 @@
+.element {
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+background-color: #fff;
+color: #000;
+border-radius: 10px;
+width: 282px;
+height: 361px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+position: relative;
+}

@@ -1,0 +1,5 @@
+.popup__style {
+  max-width: 350px;
+  box-sizing: content-box;
+  margin: auto;
+}

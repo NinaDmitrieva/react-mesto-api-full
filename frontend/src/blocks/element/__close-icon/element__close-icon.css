@@ -1,0 +1,15 @@
+.element__close-icon {
+  position: absolute;
+  width: 18px;
+  height: 19px;
+  background: url(../../../images/Group.svg) no-repeat 50%;
+  transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
+  border: none;
+  right: 20px;
+  top: 20px;
+  }
+  
+  .element__close-icon:hover {
+  opacity: 0.5;
+  }

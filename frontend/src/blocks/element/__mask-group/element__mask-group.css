@@ -1,0 +1,6 @@
+.element__mask-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 22px 15px 22px 21px;
+}

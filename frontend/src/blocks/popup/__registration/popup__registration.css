@@ -1,0 +1,16 @@
+.popup__registration{
+  max-width: 358px;
+  margin: 0 auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width: 800px) {
+.popup__form {
+  min-width: 282px;
+  text-align: center;
+  }
+}

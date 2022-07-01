@@ -1,0 +1,19 @@
+.profile__about-whom {
+  display: flex;
+  flex-direction: row;
+  margin: 40px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  .profile__about-whom {
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  width: 282px;
+  margin-bottom: 36px;
+  margin-top: 38.25px;
+  }
+}

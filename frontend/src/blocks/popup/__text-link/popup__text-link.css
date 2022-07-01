@@ -1,0 +1,15 @@
+.popup__text-link{
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.popup__text-link:hover{
+  color:#3a85ff;
+  transition: color 0.6s;
+}

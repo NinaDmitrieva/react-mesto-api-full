@@ -1,0 +1,5 @@
+.popup__about {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}

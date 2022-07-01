@@ -1,0 +1,15 @@
+.profile__hover-img {
+    justify-items: center;
+    background: url(./../../../images/Vector2.png) no-repeat 50%/26px 26px;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    cursor: pointer;
+    z-index: 0;
+
+  }
+  
+  .profile__hover-img:hover {
+    opacity: 1;
+    z-index: 0;
+    }
+

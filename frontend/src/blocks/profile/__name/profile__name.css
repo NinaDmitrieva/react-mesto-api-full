@@ -1,0 +1,6 @@
+.profile__name {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 22.25px;
+  margin-bottom: 16px;
+}

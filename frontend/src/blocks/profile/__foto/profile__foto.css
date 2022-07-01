@@ -1,0 +1,24 @@
+.profile__foto {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  object-fit: cover;
+  justify-items: center;
+  margin-right: 30px;
+  position: relative;
+  z-index: 2;  
+
+}
+
+.profile__foto:hover{
+  opacity: 0.3;
+  transition: opacity 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+.profile__foto {
+  margin-left: 28%;
+  
+}
+}

@@ -1,0 +1,13 @@
+.login__link {
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.login__link:hover{
+  color:#3a85ff;
+  transition: color 0.6s;
+}

@@ -1,0 +1,17 @@
+.popup__place {
+  width: 358px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  border: none;
+  border-bottom: 1px solid hsl(0, 0%, 33%, 20%);
+  color: #000000;
+}
+
+@media screen and (max-width: 800px) {
+.popup__place  {
+  font-size: 14px;
+  line-height: 16.94px;
+  width: 238px;
+  }
+}

@@ -1,0 +1,16 @@
+.element__like_activ {
+  background: url(./../../../../images/Union.png) no-repeat;
+  transition: opacity 0.5s ease-in-out;
+  width: 22px;
+  height: 19px;
+  border: none;
+  align-self: center;
+  margin: auto 0;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.element__like:hover {
+  opacity: 0.5;
+
+}
