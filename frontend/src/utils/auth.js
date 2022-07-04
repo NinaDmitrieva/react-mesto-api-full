@@ -1,4 +1,4 @@
-export const base_Url = 'https://api.vasilius.students.nomoreparties.sbs';
+export const base_Url = 'https://auth.nomoreparties.co';
 
 function requestResponse(res) {
     if (res.ok) {
