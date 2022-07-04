@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React , {useState} from "react";
 
-export default function Login({ onLogin }) {
+export default function Login({onLogin}) {
 
     const [state, setState] = useState({
         email: '',
@@ -14,7 +14,7 @@ export default function Login({ onLogin }) {
             [name]: value
         }))
     };
-
+    
     function handleSubmit(e) {
         e.preventDefault();
         console.log('state:', state)
@@ -25,6 +25,7 @@ export default function Login({ onLogin }) {
             );
         }
     }
+
 
     return (
 
@@ -59,7 +60,7 @@ export default function Login({ onLogin }) {
                         <button className="login__save"
                             type="submit">Войти
                         </button>
-                    </form>
+                    </form> 
                 </div>
             </div>
         </section>

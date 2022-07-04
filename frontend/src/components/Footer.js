@@ -4,6 +4,7 @@ export default function Footer() {
             <p className="footer__copyright">© 2022 Mesto Russia</p>
         </footer>
     );
-}
+  }
+  
 
-
+ 

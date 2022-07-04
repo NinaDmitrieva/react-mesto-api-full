@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Register({ onRegister }) {
+export default function Register({onRegister}) {
 
     const [state, setState] = useState({
         email: '',
@@ -15,7 +15,7 @@ export default function Register({ onRegister }) {
             [name]: value
         }))
     }
-
+    
     function handleSubmit(e) {
         e.preventDefault();
         console.log('state:', state)
@@ -47,7 +47,7 @@ export default function Register({ onRegister }) {
                         />
                         <span id="name-place-error" className="error"></span>
 
-                        <input className="login__input"
+                        <input className="login__input" 
                             type="password"
                             name="password"
                             placeholder="Пароль"
@@ -60,7 +60,7 @@ export default function Register({ onRegister }) {
                         <button className="login__save"
                             type="submit">Зарегистрироваться
                         </button>
-                        <p className="login__paragraf">Уже зарегистрированы?
+                        <p className="login__paragraf">Уже зарегистрированы? 
                             <Link to="sign-in" className="login__link">Войти</Link>
                         </p>
                     </form>

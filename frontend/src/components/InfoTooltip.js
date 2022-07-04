@@ -1,39 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Loginerror from './../images/Loginerror.png';
+import Loginerror from './../images/Loginerror.png'; 
 import Loginok from './../images/Loginok.png'
 
 
-export default function InfoTooltip({ onClose, isOpen, loggedIn }) {
+export default function InfoTooltip({ onClose, isOpen, loggedIn} ) {
 
-  return (
-    <section className={`popup popup__registration-form ${isOpen ? 'popup_activ' : ''}`}>
-      <button className="popup__close-icon popup__close"
-        type="button"
-        onClick={onClose}
-      >
-      </button>
+    return (
+            <section className={`popup popup__registration-form ${isOpen? 'popup_activ' : ''}`}>
+                <button className="popup__close-icon popup__close"
+                    type="button"
+                     onClick={onClose}
+                    >
+                </button>
+           
+                <div className="popup__registration-box">
 
-      <div className="popup__registration-box">
+                {loggedIn?
+                <>
+                  <img className="popup__registration-img" alt="результат регистрации, либо Loginok, Login" src={Loginok}/>
+                  <h3 className="popup__text">Вы успешно зарегистрировались!</h3> 
+               </>
 
-        {loggedIn ?
-          <>
-            <img className="popup__registration-img" alt="результат регистрации, либо Loginok, Login" src={Loginok} />
-            <h3 className="popup__text">Вы успешно зарегистрировались!</h3>
-          </>
-
-          :
-          <>
-            <img className="popup__registration-img" alt="результат регистрации, либо Loginok, Login" src={Loginerror} />
-            <h3 className="popup__text">Что-то пошло не так!
-              <Link to="sign-up" className="popup__text-link">Попробуйте ещё раз!</Link>
-            </h3>
-          </>
-        }
-
-      </div>
-
-
-    </section>
-  )
+               :
+                <> 
+                  <img className="popup__registration-img" alt="результат регистрации, либо Loginok, Login" src={Loginerror} />
+                  <h3 className="popup__text">Что-то пошло не так!
+                  <Link to="sign-up" className="popup__text-link">Попробуйте ещё раз!</Link>
+                  </h3>
+                </>
+                }
+                
+                </div>
+                
+             
+        </section>
+    )
 }

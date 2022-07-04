@@ -1,6 +1,6 @@
 
 export default class Api {
-    constructor(baseUrl, headers) {
+    constructor(baseUrl, headers ) {
         this.baseUrl = baseUrl;
         this.headers = headers;
     }
@@ -18,9 +18,9 @@ export default class Api {
         })
             .then(this.requestResponse)
     }
-
-
-    addNewCard(name, link) {
+   
+ 
+    addNewCard(name, link) { 
         return fetch(`${this.baseUrl}/cards`, {
             method: 'POST',
             headers: this.headers,
@@ -58,12 +58,12 @@ export default class Api {
             headers: this.headers,
             body: JSON.stringify({
                 avatar: data.avatar
-            })
+            })          
         })
             .then(this.requestResponse)
     }
 
-    deleteCard(id) {
+    deleteCard(id) { 
         return fetch(`${this.baseUrl}/cards/${id}`, {
             method: 'DELETE',
             headers: this.headers,
@@ -71,19 +71,33 @@ export default class Api {
             .then(this.requestResponse)
     }
 
-
-    changeLike(id, isLiked) {
+    // setLike(id) {
+    //     return fetch(`${this.baseUrl}/cards/${id}/likes`, {
+    //       method: "PUT",
+    //       headers: this.headers,
+    //     })
+    //         .then(this.requestResponse)
+    //   }
+    
+    // deleteLike(id) {
+    //     return fetch(`${this.baseUrl}/cards/${id}/likes`, {
+    //       method: "DELETE",
+    //       headers: this.headers,
+    //     })
+    //         .then(this.requestResponse)
+    //   }
+      changeLike(id, isLiked) {
         return fetch(`${this.baseUrl}/cards/${id}/likes`, {
-            method: `${isLiked ? 'PUT' : 'DELETE'}`,
-            headers: this.headers
+          method: `${isLiked ? 'PUT' : 'DELETE'}`,
+          headers: this.headers
         })
             .then(this.requestResponse);
-    }
+      }
 }
 
 export const api = new Api('https://mesto.nomoreparties.co/v1/cohort-38', {
     authorization: '1fed1f0c-d99b-4c82-a201-fb2e7265dac6',
     'Content-Type': 'application/json',
     'Accept': 'application/json: charset=utf-8'
-});
+  });
 

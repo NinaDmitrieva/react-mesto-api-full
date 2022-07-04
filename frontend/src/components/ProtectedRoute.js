@@ -1,18 +1,16 @@
 import React from 'react';
-import { Navigate } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
-// function ProtectedRoute({ component: Component, ...props }) {
-//     return (
-//         <>
-//             {props.loggedIn ? <Component {...props} /> : <Navigate to="/sign-in" />}
-//         </>
-//     )
-// }
-function ProtectedRoute({ loggedIn, children }) {
+
+const ProtectedRoute = ({ component: Component, ...props }) => {
+
     return (
-        <>
-            {loggedIn ? children : <Navigate to="/sign-in" />}
-        </>
+        <Route>
+            {
+                () => props.loggedIn ? 
+                    <Component exact {...props} /> : <Redirect to="/sign-in" />
+            }
+        </Route>
     )
 }
 

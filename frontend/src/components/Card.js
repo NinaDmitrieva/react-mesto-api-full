@@ -12,7 +12,7 @@ const cardDeleteButtonClassName = (
 );
 const isLiked = props.card.likes.some(i => i._id === currentUser._id);
 
-  const cardLikeButtonClassName = (
+const cardLikeButtonClassName = (
    `element__click ${isLiked ? 'element__like_activ' : 'element__like'}`); 
 
  function handleClick() {
