@@ -81,7 +81,7 @@ export default class Api {
     }
 }
 
-export const api = new Api('https://mesto.nomoreparties.co/v1/cohort-38', {
+export const api = new Api('https://api.vasilius.students.nomoreparties.sbs', {
     authorization: '1fed1f0c-d99b-4c82-a201-fb2e7265dac6',
     'Content-Type': 'application/json',
     'Accept': 'application/json: charset=utf-8'

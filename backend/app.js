@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const cors = require('./middlewares/cors');
 const { errors, celebrate, Joi } = require('celebrate');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
@@ -13,7 +14,7 @@ const cors = require('cors');
 
 const app = express();
 const { PORT = 3000 } = process.env;
-app.use(cors({ credentials: true, origin: ['https://localhost:3000', 'https://domainname.mesto-full.nomoreparties.sbs', 'http://domainname.mesto-full.nomoreparties.sbs'] }));
+app.use(cors);
 mongoose.connect('mongodb://localhost:27017/mestodb', { useNewUrlParser: true, family: 4 });
 
 app.use(bodyParser.json());
