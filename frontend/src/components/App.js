@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -29,11 +29,11 @@ export default function App() {
   const [email, setEmail] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const [isInfoTooltip, setIsInfoTooltip] = useState(false);
-  const history = useHistory();
   const [card, setCard] = useState({});
   const [deletedPopup, setDeletedPopup] = useState({});
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
+  const history = useHistory();
 
   function handleTokenCheck() {
     const jwt = localStorage.getItem('jwt');
