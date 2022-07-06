@@ -3,8 +3,8 @@ const allowedCors = [
   'http://domainname.mesto-full.nomoreparties.sbs',
   'http://localhost:3000',
   'https://localhost:3000',
-  'https://api.mesto-full .nomoredomains.sbs',
-  'http://api.mesto-full .nomoredomains.sbs',
+  'https://api.mesto-full.nomoredomains.sbs',
+  'http://api.mesto-full.nomoredomains.sbs',
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
