@@ -18,7 +18,7 @@ export default function Header({ loggedIn, email, exitUser}) {
         </div>
 
          :
-            ( (location.pathname === '/sign-in') ? 
+            ( (location.pathname === '/signin') ? 
             (<Link to="/signup" className='header__user-exit'>Регистрация</Link>) : 
             (<Link to="/signin" className='header__user-exit'>Войти</Link>))
         }

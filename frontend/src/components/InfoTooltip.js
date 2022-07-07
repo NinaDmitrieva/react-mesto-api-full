@@ -26,7 +26,7 @@ export default function InfoTooltip({ onClose, isOpen, loggedIn} ) {
                 <> 
                   <img className="popup__registration-img" alt="результат регистрации, либо Loginok, Login" src={Loginerror} />
                   <h3 className="popup__text">Что-то пошло не так!
-                  <Link to="sign-up" className="popup__text-link">Попробуйте ещё раз!</Link>
+                  <Link to="signup" className="popup__text-link">Попробуйте ещё раз!</Link>
                   </h3>
                 </>
                 }
