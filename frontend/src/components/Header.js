@@ -14,13 +14,13 @@ export default function Header({ loggedIn, email, exitUser}) {
 
         <div className='header__menu'>
           <p className='header__user-email'>{email}</p> 
-            <Link to="sign-in" onClick={exitUser} className='header__user-exit'>Выйти</Link>
+            <Link to="signin" onClick={exitUser} className='header__user-exit'>Выйти</Link>
         </div>
 
          :
             ( (location.pathname === '/sign-in') ? 
-            (<Link to="/sign-up" className='header__user-exit'>Регистрация</Link>) : 
-            (<Link to="/sign-in" className='header__user-exit'>Войти</Link>))
+            (<Link to="/signup" className='header__user-exit'>Регистрация</Link>) : 
+            (<Link to="/signin" className='header__user-exit'>Войти</Link>))
         }
 
     </header>

@@ -11,10 +11,19 @@ export default class Api {
         }
         return Promise.reject(`Все сломалось:( ${res.status}`);
     }
+
+    getHeaders() {
+        const token = localStorage.getItem('jwt');
+        return {
+            'Authorization': `Bearer ${token}`,
+            ...this.headers,
+        };
+    }
+
     getInitialCards() {
         return fetch(`${this.baseUrl}/cards`, {
             method: 'GET',
-            headers: this.headers,
+            headers: this.getHeaders(),
         })
             .then(this.requestResponse)
     }
@@ -23,7 +32,7 @@ export default class Api {
     addNewCard(name, link) { 
         return fetch(`${this.baseUrl}/cards`, {
             method: 'POST',
-            headers: this.headers,
+            headers: this.getHeaders(),
             body: JSON.stringify({
                 name,
                 link
@@ -35,7 +44,7 @@ export default class Api {
     getUserInfo() {
         return fetch(`${this.baseUrl}/users/me`, {
             method: 'GET',
-            headers: this.headers
+            headers: this.getHeaders(),
         })
             .then(this.requestResponse);
     }
@@ -43,7 +52,7 @@ export default class Api {
     setUserInfo(name, job) {
         return fetch(`${this.baseUrl}/users/me`, {
             method: 'PATCH',
-            headers: this.headers,
+            headers: this.getHeaders(),
             body: JSON.stringify({
                 name: name,
                 about: job
@@ -55,7 +64,7 @@ export default class Api {
     setAvatarInfo(data) {
         return fetch(`${this.baseUrl}/users/me/avatar`, {
             method: 'PATCH',
-            headers: this.headers,
+            headers: this.getHeaders(),
             body: JSON.stringify({
                 avatar: data.avatar
             })          
@@ -66,7 +75,7 @@ export default class Api {
     deleteCard(id) { 
         return fetch(`${this.baseUrl}/cards/${id}`, {
             method: 'DELETE',
-            headers: this.headers,
+            headers: this.getHeaders(),
         })
             .then(this.requestResponse)
     }
@@ -89,15 +98,22 @@ export default class Api {
       changeLike(id, isLiked) {
         return fetch(`${this.baseUrl}/cards/${id}/likes`, {
           method: `${isLiked ? 'PUT' : 'DELETE'}`,
-          headers: this.headers
+            headers: this.getHeaders(),
         })
             .then(this.requestResponse);
       }
 }
 
-export const api = new Api('https://api.mesto-full.nomoredomains.sbs', {
-    authorization: '1fed1f0c-d99b-4c82-a201-fb2e7265dac6',
-    'Content-Type': 'application/json',
-    'Accept': 'application/json: charset=utf-8'
-  });
+// export const api = new Api('https://api.mesto-full.nomoredomains.sbs', {
+//     authorization: '1fed1f0c-d99b-4c82-a201-fb2e7265dac6',
+//     'Content-Type': 'application/json',
+//     'Accept': 'application/json: charset=utf-8'
+//   });
+
+export const api = new Api({
+    baseUrl: "https://api.mesto-full.nomoredomains.sbs",
+    headers: {
+        "Content-Type": "application/json",
+    },
+});
 

@@ -61,7 +61,7 @@ export default function Register({onRegister}) {
                             type="submit">Зарегистрироваться
                         </button>
                         <p className="login__paragraf">Уже зарегистрированы? 
-                            <Link to="sign-in" className="login__link">Войти</Link>
+                            <Link to="signin" className="login__link">Войти</Link>
                         </p>
                     </form>
                 </div>

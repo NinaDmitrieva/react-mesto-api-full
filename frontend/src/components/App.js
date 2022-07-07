@@ -80,7 +80,7 @@ export default function App() {
               localStorage.setItem('jwt', res.token)
               setEmail(email);
               setLoggedIn(true);
-              history.push('/');
+              history.replace({ pathname: "/" });
             }
           })
           .catch((err) => {
@@ -94,7 +94,7 @@ export default function App() {
           if(res) {
           setIsInfoTooltip(true);
           setLoggedIn(true)
-          history.push("/sign-in");
+          history.push("/signin");
         }})
         .catch((err) => {
         console.log(err);
@@ -222,6 +222,7 @@ export default function App() {
   function exitUser() {
     localStorage.removeItem('jwt');
     setLoggedIn(false);
+    history.push("/signin");
   }
 
   return (
@@ -248,13 +249,13 @@ export default function App() {
             onCardDelete={handleConfirmClick}
             cards={cards}
             />
-          <Route path="/sign-up"> 
+          <Route path="/signup"> 
             <Register 
                 onRegister={handleRegisterSubmit}
             />
           </Route>
            
-          <Route path="/sign-in"> 
+          <Route path="/signin"> 
             <Login
                 onLogin={handleLoginSubmit}
             />

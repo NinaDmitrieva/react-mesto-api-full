@@ -15,7 +15,7 @@ const cors = require('cors');
 
 const app = express();
 const { PORT = 3000 } = process.env;
-app.use(cors);
+app.use(cors({ credentials: true, origin: '*' }))
 mongoose.connect('mongodb://localhost:27017/mestodb', { useNewUrlParser: true, family: 4 });
 
 app.use(bodyParser.json());

@@ -7,7 +7,8 @@ const AuthError = require('../errors/AuthError');
 const BadReqError = require('../errors/BadReqError');
 const ConflictError = require('../errors/ConflictError');
 const NotFoundError = require('../errors/NotFoundError');
-const { JWT } = require('../utils/const');
+
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 module.exports.createUser = (req, res, next) => {
   const {
@@ -61,14 +62,10 @@ module.exports.login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        JWT,
+        NODE_ENV === 'production' ? JWT_SECRET : 'SECRET_KEY',
         { expiresIn: '7d' },
       );
-      res.cookie('jwt', token, {
-        httpOnly: true,
-        maxAge: 3600000 * 24 * 7,
-      })
-        .send({ token });
+        res.send({ token });
     })
     .catch(() => {
       next(new AuthError('Ошибка доступа'));
