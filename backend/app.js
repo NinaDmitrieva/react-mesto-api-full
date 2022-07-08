@@ -2,8 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-//const cors = require('./middlewares/cors');
-const cors = require('cors');
+const cors = require('./middlewares/cors');
 const { errors, celebrate, Joi } = require('celebrate');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
@@ -19,21 +18,7 @@ app.use(bodyParser.json());
 
 
 app.use(requestLogger);
-const allowedCors = [
-  'https://domainname.mesto-full.nomoreparties.sbs',
-  'http://domainname.mesto-full.nomoreparties.sbs',
-  'http://localhost:3000',
-  'https://localhost:3000',
-  'https://api.mesto-full.nomoredomains.sbs',
-  'http://api.mesto-full.nomoredomains.sbs',
-];
-
-app.use('*', cors({
-  origin: allowedCors,
-  credentials: true,
-}));
-
-//app.use(cors({ credentials: true, origin: '*' }));
+app.use(cors({ credentials: true, origin: '*' }));
 
 app.get('/crash-test', () => {
   setTimeout(() => {
