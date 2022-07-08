@@ -2,8 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors = require('./middlewares/cors');
 const { errors, celebrate, Joi } = require('celebrate');
+const cors = require('./middlewares/cors');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/NotFoundError');
@@ -15,7 +15,6 @@ const app = express();
 const { PORT = 3000 } = process.env;
 
 app.use(bodyParser.json());
-
 
 app.use(requestLogger);
 app.use(cors({ credentials: true, origin: '*' }));

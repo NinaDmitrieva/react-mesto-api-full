@@ -9,10 +9,10 @@ function requestResponse(res) {
 
 export const registration = (email, password) => {
     return fetch(`${base_Url}/signup`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            "Accept": "application/json",
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({
             email, 
@@ -24,10 +24,10 @@ export const registration = (email, password) => {
 
 export const authorization = (email, password) => {
     return fetch(`${base_Url}/signin`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            "Accept": "application/json",
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({
             email,
@@ -40,11 +40,11 @@ export const authorization = (email, password) => {
 
 export const getUserData = (token) => {
     return fetch(`${base_Url}/users/me`, {
-        method: 'GET',
+        method: "GET",
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
     })
         .then(requestResponse)
