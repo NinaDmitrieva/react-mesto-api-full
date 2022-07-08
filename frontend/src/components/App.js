@@ -56,22 +56,33 @@ export default function App() {
     handleTokenCheck();
   }, []);
 
+  // useEffect(() => {
+  //   if (loggedIn) {
+  //     api.getUserInfo()
+  //       .then((data) => {
+  //         setCurrentUser(data);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       })
+  //     api.getInitialCards()
+  //       .then((cards) => {
+  //         setCards(cards)
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       }); 
+  //   }
+  // }, [loggedIn]);
+
   useEffect(() => {
     if (loggedIn) {
-      api.getUserInfo()
-        .then((data) => {
-          setCurrentUser(data);
+      Promise.all([api.getUserInfo(), api.getInitialCards()])
+        .then(([user, cards]) => {
+          setCurrentUser(user);
+          setCards(cards);
         })
-        .catch((err) => {
-          console.log(err);
-        })
-      api.getInitialCards()
-        .then((cards) => {
-          setCards(cards)
-        })
-        .catch((err) => {
-          console.log(err);
-        }); 
+        .catch((err) => console.log(`Ошибка ${err}`));
     }
   }, [loggedIn]);
 
