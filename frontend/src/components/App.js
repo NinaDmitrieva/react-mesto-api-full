@@ -57,21 +57,23 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    api.getUserInfo()
-      .then((data) => {
-        setCurrentUser(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-    api.getInitialCards()
-      .then((cards) => {
-        setCards(cards)
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+    if (loggedIn) {
+      api.getUserInfo()
+        .then((data) => {
+          setCurrentUser(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+      api.getInitialCards()
+        .then((cards) => {
+          setCards(cards)
+        })
+        .catch((err) => {
+          console.log(err);
+        }); 
+    }
+  }, [loggedIn]);
 
   function handleLoginSubmit(email, password) {
     auth.authorization(email, password)
