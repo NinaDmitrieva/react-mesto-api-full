@@ -83,7 +83,9 @@ export default function App() {
           setCards(cards);
         })
         .catch((err) => console.log(`Ошибка ${err}`));
-    }
+    }else {
+    return;
+  }
   }, [loggedIn]);
 
   function handleLoginSubmit(email, password) {
