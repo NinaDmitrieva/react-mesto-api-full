@@ -39,7 +39,7 @@ export default function App() {
     const jwt = localStorage.getItem('jwt');
 
     if (jwt) {
-      auth.handleTokenCheck(jwt)
+      auth.getUserData(jwt)
           .then((res) => {
             if(res)
             setLoggedIn(true);
