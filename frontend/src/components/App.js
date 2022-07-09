@@ -109,6 +109,7 @@ export default function App() {
         .then((res) => {
           if(res) {
           setIsInfoTooltip(true);
+          setCompleted(true);
           history.push("/signin");
         }})
         .catch((err) => {
@@ -116,6 +117,7 @@ export default function App() {
       })
       .catch(() => {
         setIsInfoTooltip(true);
+        setCompleted(false)
       })
   }
 
