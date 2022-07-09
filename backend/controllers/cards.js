@@ -5,8 +5,8 @@ const NotFoundError = require('../errors/NotFoundError');
 
 module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
-  const { _id } = req.user;
-  Card.create({ name, link, owner: _id })
+  const owner = req.user._id;
+  Card.create(name, link, owner)
     .then((card) => res.status(201).send(card))
     .catch((err) => {
       if (err.name === 'ValidationError') {
@@ -18,7 +18,7 @@ module.exports.createCard = (req, res, next) => {
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
-    .then((cards) => res.send({ data: cards }))
+    .then((cards) => res.send(cards))
     .catch((err) => {
       next(err);
     });
@@ -54,7 +54,7 @@ module.exports.likeCard = (req, res, next) => {
       if (!card) {
         throw new NotFoundError('Карточка отсутствует');
       }
-      res.status(201).send({ data: card });
+      res.status(201).send(card);
     })
     .catch(next);
 };
@@ -65,7 +65,7 @@ module.exports.dislikeCard = (req, res, next) => {
       if (!card) {
         throw new NotFoundError('Карточка отсутствует');
       }
-      res.send({ data: card });
+      res.send(card);
     })
     .catch(next);
 };
