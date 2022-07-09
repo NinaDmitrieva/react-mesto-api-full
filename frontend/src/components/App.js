@@ -189,9 +189,9 @@ export default function App() {
       })
   };
 
-  function handleAddNewCard(card) {
+  function handleAddNewCard(name, link) {
     setRenderLoading(true)
-    api.addNewCard(card.name, card.link)
+    api.addNewCard(name, link)
       .then((newCard) => {
         setCards([newCard, ...cards]);
         closeAllPopups()
