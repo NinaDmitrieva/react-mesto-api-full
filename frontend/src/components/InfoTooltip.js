@@ -4,7 +4,7 @@ import Loginerror from './../images/Loginerror.png';
 import Loginok from './../images/Loginok.png'
 
 
-export default function InfoTooltip({ onClose, isOpen, loggedIn} ) {
+export default function InfoTooltip({ onClose, isOpen, isCompleted} ) {
 
     return (
             <section className={`popup popup__registration-form ${isOpen? 'popup_activ' : ''}`}>
@@ -16,7 +16,7 @@ export default function InfoTooltip({ onClose, isOpen, loggedIn} ) {
            
                 <div className="popup__registration-box">
 
-                {loggedIn?
+          {isCompleted ?
                 <>
                   <img className="popup__registration-img" alt="результат регистрации, либо Loginok, Login" src={Loginok}/>
                   <h3 className="popup__text">Вы успешно зарегистрировались!</h3> 

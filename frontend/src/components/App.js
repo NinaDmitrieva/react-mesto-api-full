@@ -29,6 +29,7 @@ export default function App() {
   const [email, setEmail] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const [isInfoTooltip, setIsInfoTooltip] = useState(false);
+  const [isCompleted, setCompleted] = useState(false);
   const [card, setCard] = useState({});
   const [deletedPopup, setDeletedPopup] = useState({});
   const [currentUser, setCurrentUser] = useState({});
@@ -108,7 +109,6 @@ export default function App() {
         .then((res) => {
           if(res) {
           setIsInfoTooltip(true);
-          setLoggedIn(true)
           history.push("/signin");
         }})
         .catch((err) => {
@@ -116,7 +116,6 @@ export default function App() {
       })
       .catch(() => {
         setIsInfoTooltip(true);
-        setLoggedIn(false)
       })
   }
 
@@ -317,7 +316,7 @@ export default function App() {
           <InfoTooltip 
             onClose={closeAllPopups}
             isOpen={isInfoTooltip}
-            loggedIn={loggedIn}
+            isCompleted={isCompleted}
           />
         </div>
       </div>
