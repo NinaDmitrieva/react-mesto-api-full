@@ -1,3 +1,14 @@
 .element__click {
- background: url(./../../../images/Vector.png) no-repeat;
+  background: url(./../../../images/Vector.png) no-repeat;
+  width: 22px;
+  height: 19px;
+  border: none;
+  align-self: center;
+  margin: auto 0;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
 }
+
+.element__click:hover {
+  opacity: 0.5;
+  }
