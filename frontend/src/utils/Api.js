@@ -34,8 +34,8 @@ export default class Api {
             method: 'POST',
             headers: this.getHeaders(),
             body: JSON.stringify({
-                name: name,
-                link: link
+                name,
+                link
             })
         })
             .then(this.requestResponse)
