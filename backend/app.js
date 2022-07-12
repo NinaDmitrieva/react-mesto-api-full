@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const { errors, celebrate, Joi } = require('celebrate');
 const cors = require('cors');
@@ -15,7 +16,7 @@ const app = express();
 const { PORT = 3000 } = process.env;
 
 app.use(bodyParser.json());
-
+app.use(helmet());
 app.use(requestLogger);
 app.use(cors({ credentials: true, origin: ['https://localhost:3000', 'https://domainname.mesto-full.nomoreparties.sbs', 'http://domainname.mesto-full.nomoreparties.sbs', 'http://api.mesto-full.nomoredomains.sbs', 'https://api.mesto-full.nomoredomains.sbs'] }));
 app.get('/crash-test', () => {
