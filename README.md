@@ -20,4 +20,4 @@
 ### Ссылки
 [API сервиса](https://api.mesto-full.nomoredomains.sbs/)  
 [Сайт](http://domainname.mesto-full.nomoreparties.sbs/)  
-* IP 51.250.71.62
+* IP 51.250.71.62 
