@@ -17,7 +17,4 @@
 **npm run start** — запускает сервер
 **npm run dev** — запускает сервер с hot-reload
 
-### Ссылки
-[API сервиса](https://api.mesto-full.nomoredomains.sbs/)  
-[Сайт](http://domainname.mesto-full.nomoreparties.sbs/)  
-* IP 51.250.71.62 
+
